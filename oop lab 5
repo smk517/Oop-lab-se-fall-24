@@ -1,0 +1,127 @@
+//task1
+package player;
+
+
+public class Player {
+    String playerName;
+   String position;
+   Player(String playerName, String position){
+    this.position=position;
+    this.playerName=playerName;}
+    void display()
+    {System.out.println("Player Name:"+playerName);
+    System.out.println("Player Position:"+position);
+    }
+    public static void main(String[] args) {
+        Player player1=new Player("BABAR","CAPTAIN");
+        Player player2=new Player("RIZWAN","WICKET KEEPER");
+        Team team=new Team(player1,player2);
+        team.playerinfo();
+    }
+    
+    
+}
+package player;
+
+
+public class Team {
+  
+Player player1;
+    Player player2;
+    Team(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+    }
+    void addPlayers(Player player1,Player player2)
+    {this.player1=player1;
+    this.player2=player2;}
+    void playerinfo()
+            
+    {
+        System.out.println("Team Players:");
+        player1.display();
+    player2.display();}
+    
+}
+//task2
+package computer;
+
+
+public class Computer {
+Cpu cpu;
+Ram ram;
+Harddrive hd;
+Computer(Cpu cpu,Ram ram,Harddrive hd){
+    this.cpu=cpu;
+this.ram=ram;
+this.hd=hd;
+}
+void display()
+        {
+            System.out.println("Different parts of the Computers:");
+            cpu.display();
+            ram.display();
+            hd.display();
+        }
+    
+    public static void main(String[] args) {
+       Cpu cpu=new Cpu("ABS","4.0GHz");
+      Ram ram=new Ram("GFC","64GB");
+      Harddrive hd=new Harddrive("OPL","3TB");
+      Computer c=new Computer(cpu,ram,hd);
+      c.display();
+    }
+    
+}
+package computer;
+
+
+public class Cpu {
+     String brand;
+    String Capacity;
+    Cpu(String brand,String Capacity)
+             {
+        this.brand=brand;
+        this.Capacity=Capacity;
+    }
+     void display()
+    {
+    System.out.println("The CPU brand is "+brand);
+    System.out.println("The CPU Capacity is "+Capacity);
+    }
+}
+package computer;
+
+
+public class Ram {
+    String brand;
+    String Capacity;
+    Ram(String brand,String Capacity)
+    {this.brand=brand;
+        this.Capacity=Capacity;
+    }
+    void display()
+    {
+    System.out.println("The Ram brand is "+brand);
+    System.out.println("The Ram Capacity is "+Capacity);
+    }
+    
+}
+package computer;
+
+
+public class Harddrive {
+    String brand;
+    String Capacity;
+    Harddrive(String brand,String Capacity)
+    {
+        this.brand=brand; 
+
+        this.Capacity=Capacity;
+    }
+    void display()
+    {
+    System.out.println("The Hard-Drive brand is "+brand);
+    System.out.println("The Hard-Drive Capacity is "+Capacity);
+    }
+}
