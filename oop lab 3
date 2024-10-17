@@ -1,0 +1,32 @@
+//task 1
+package printstringarray;
+
+
+public class PrintStringArray {
+
+   
+    public static void main(String[] args) {
+        String[] flowers = {"rose", "daisy", "bluebell" };
+        for (int i = 0; i < flowers.length; i++) {
+            System.out.println(flowers[i]);
+        }
+    }
+}
+//task 2
+package evenodd;
+
+
+public class Evenodd {
+
+    public static void main(String[] args) {
+       int n=5;
+       if(n%2==0){
+           System.out.println("number is even");
+          
+       }
+        else{
+         System.out.println("number is odd");
+    }  
+    }
+    
+}
