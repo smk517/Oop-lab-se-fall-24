@@ -1,0 +1,32 @@
+package student;
+
+/**
+ *
+ * @author HOME
+ */
+public class Student {
+
+  String name;
+  String city;
+  int age;
+   public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("Age: " + age);
+    }
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+        s1.name = "sakina";
+        s1.city = "islamabad";
+        s1.age = 20;
+         s2.name = "hafsa";
+        s2.city = "islamabad";
+        s2.age = 24;
+         System.out.println("Student 1:");
+        s1.displayInfo();
+        System.out.println("\nStudent 2:");
+        s2.displayInfo();
+    }
+    
+}
