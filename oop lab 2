@@ -30,3 +30,82 @@ public class Student {
     }
     
 }
+//task2
+package area;
+
+/**
+ *
+ * @author HOME
+ */
+public class Area {
+
+   double length;
+    double width;
+    double calculateArea() {
+        return length * width;
+    }
+    public static void main(String[] args) {
+        Area area = new Area();
+        area.length = 7.0;
+         area.width = 4.0;
+         double result = area.calculateArea();
+         System.out.println("The area is: " + result);
+    }
+    
+}
+//task3
+package computer;
+
+/**
+ *
+ * @author HOME
+ */
+public class Computer {
+
+   String name;
+  String config;
+  int cost;
+    String os;
+     public void displayDetails() {
+        System.out.println("The company name is " + name);
+        System.out.println("The configuration is " + config);
+        System.out.println("Its Cost is " + cost);
+        System.out.println("Its operating System is " + os);
+    }
+    public static void main(String[] args) {
+       Computer myComputer = new Computer();
+       myComputer.name="apple";
+        myComputer.config="i5";
+        myComputer.cost=50000;
+        
+        myComputer.os="ios";
+        System.out.println(" computer details:");
+         myComputer.displayDetails();
+    }
+    
+}
+//task4
+package maxofthree;
+
+/**
+ *
+ * @author HOME
+ */
+public class Maxofthree {
+
+    
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 20;
+        int num3 = 30;
+        int max = num1; 
+        if (num2 > max) {
+            max = num2; 
+        }
+        if (num3 > max) {
+            max = num3; 
+            System.out.println("The maximum number is: " + max);
+        }
+
+}
+
