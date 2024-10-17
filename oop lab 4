@@ -1,0 +1,113 @@
+package laptop;
+import java.util.Scanner;
+//task 1
+
+public class Laptop {
+    String brand;
+    
+   Laptop(String brand){
+        this.brand =brand;
+       
+    }
+    void displayBrand(String brand) {
+        System.out.println("Laptop brand: " + brand);
+    }
+
+    
+    public static void main(String[] args) {
+       System.out.println("Enter the Brand Name");
+        Scanner sc = new Scanner(System.in);
+        String brand = sc.nextLine();
+        Laptop pc = new Laptop(brand);
+       pc.displayBrand(brand);
+       
+
+    }
+    
+}
+//task1
+package printsakina;
+
+
+public class Printsakina {
+
+        public static void main(String[] args) {
+        String name = "sakina";
+        printNameWithAsterisks(name);
+    }
+        public static void printNameWithAsterisks(String name) {
+        
+        String[][] patterns = {
+            
+            {
+                " ***** ",
+                "*      ",
+                "*      ",
+                " ***** ",
+                "      *",
+                "      *",
+                " ***** "
+            },
+            
+            {
+                "  ***  ",
+                " *   * ",
+                " *   * ",
+                " ***** ",
+                " *   * ",
+                " *   * ",
+                " *   * "
+            },
+            // K
+            {
+                "*    * ",
+                "*   *  ",
+                "****   ",
+                "*   *  ",
+                "*    * "
+            },
+            // I
+            {
+                " ***** ",
+                "   *   ",
+                "   *   ",
+                "   *   ",
+                " ***** "
+            },
+            // N
+            {
+                "*    * ",
+                "**   * ",
+                "* *  * ",
+                "*  * * ",
+                "*   ** "
+            }
+        };
+
+        
+        for (int row = 0; row < 7; row++) {
+            for (int i = 0; i < name.length(); i++) {
+                char ch = name.charAt(i);
+                
+                int letterIndex = 0; 
+                switch (ch) {
+                    case 's': letterIndex = 0; break;
+                    case 'a': letterIndex = 1; break;
+                    case 'k': letterIndex = 2; break;
+                    case 'i': letterIndex = 3; break;
+                    case 'n': letterIndex = 4; break;
+                }
+
+                
+                if (row < patterns[letterIndex].length) {
+                    System.out.print(patterns[letterIndex][row] + "  ");
+                } else {
+                    
+                    System.out.print("       "); 
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
