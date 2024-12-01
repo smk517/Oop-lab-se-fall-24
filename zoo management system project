@@ -429,23 +429,42 @@ public void deleteData(String id) {
     }
     JOptionPane.showMessageDialog(null, "Ticket Not Found.");
 }
-
 /**
- * Validates if all required fields are filled.
+ * Validates if all required fields are filled and performs age validation.
  *
  * @param fields The array of fields to validate.
+ *               The "age" field should be at a specific position (e.g., index 1).
  * @return true if all fields are valid, false otherwise.
  */
 private boolean validateFields(String[] fields) {
-    for (String field : fields) {
-        if (field == null || field.trim().isEmpty()) { // Check for null or empty fields
-            JOptionPane.showMessageDialog(null, "All fields must be filled.");
+    // Define field names for better error messages
+    String[] fieldNames = {"ID", "Name", "Age", "Type"};
+    
+    // Loop through each field to check if they are not null or empty
+    for (int i = 0; i < fields.length; i++) {
+        if (fields[i] == null || fields[i].trim().isEmpty()) { // Check for null or empty fields
+            JOptionPane.showMessageDialog(null, "Field '" + fieldNames[i] + "' must be filled.");
             return false;
         }
     }
-    return true;
+
+    // Additional validation for the "Age" field (must be numeric and positive)
+    try {
+        int age = Integer.parseInt(fields[2].trim()); // Age is in the 3rd field (index 2)
+        if (age <= 0) {
+            JOptionPane.showMessageDialog(null, "Age must be a positive integer.");
+            return false;
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Age must be a valid number.");
+        return false;
+    }
+
+    return true; // All fields are valid
 }
 }
+
+
 
 //EMPLOYEE MANAGEMENT SYSTEM
 package zoomodule;
@@ -852,7 +871,7 @@ private boolean validateFields(String[] fields) {
             return false;
         }
     }
-return true;
+    return true;
 }
 }
 //ZOO MANAGEMENT SYSTEM MAIN CLASS
@@ -1030,5 +1049,3 @@ public class ZooManagementSystem {
         modulesFrame.setVisible(true);
     }
 }
-
-   
